@@ -1,0 +1,433 @@
+/**
+ * Event Booking Manager Pro — Frontend Styles
+ *
+ * Styles for single event pages and the events archive grid.
+ * These styles are scoped to .ebmp-* classes and will not
+ * conflict with any theme styles.
+ *
+ * @package TPots\EventBooking
+ */
+
+/* ── CSS Variables ──────────────────────────────────────────── */
+:root {
+	--ebmp-primary:     #2563eb;
+	--ebmp-primary-dark:#1d4ed8;
+	--ebmp-success:     #16a34a;
+	--ebmp-danger:      #dc2626;
+	--ebmp-warning:     #d97706;
+	--ebmp-text:        #1f2937;
+	--ebmp-text-light:  #6b7280;
+	--ebmp-border:      #e5e7eb;
+	--ebmp-bg-light:    #f9fafb;
+	--ebmp-radius:      10px;
+	--ebmp-shadow:      0 2px 12px rgba(0,0,0,0.08);
+	--ebmp-font:        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ── Shared Wrappers ────────────────────────────────────────── */
+.ebmp-single-wrap,
+.ebmp-archive-wrap {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 40px 20px 60px;
+	font-family: var(--ebmp-font);
+	color: var(--ebmp-text);
+}
+
+/* ════════════════════════════════════════════════════════════
+   SINGLE EVENT PAGE
+════════════════════════════════════════════════════════════ */
+
+.ebmp-single-event {
+	max-width: 860px;
+	margin: 0 auto;
+}
+
+/* Header */
+.ebmp-event-header {
+	margin-bottom: 28px;
+}
+
+.ebmp-header-top {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+.ebmp-event-title {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--ebmp-text);
+	margin: 0;
+	line-height: 1.25;
+	flex: 1;
+}
+
+/* Status Badge */
+.ebmp-status-badge {
+	display: inline-block;
+	padding: 5px 14px;
+	border-radius: 999px;
+	font-size: 0.78rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	white-space: nowrap;
+	margin-top: 6px;
+}
+
+.ebmp-status-open      { background: #dcfce7; color: #15803d; }
+.ebmp-status-closed    { background: #fee2e2; color: #b91c1c; }
+.ebmp-status-cancelled { background: #fef3c7; color: #92400e; }
+
+/* Featured Image */
+.ebmp-event-thumbnail {
+	border-radius: var(--ebmp-radius);
+	overflow: hidden;
+	margin-bottom: 32px;
+	line-height: 0;
+}
+
+.ebmp-event-thumbnail img {
+	width: 100%;
+	height: auto;
+	max-height: 460px;
+	object-fit: cover;
+	display: block;
+}
+
+/* Meta Bar */
+.ebmp-event-meta-bar {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 16px;
+	background: var(--ebmp-bg-light);
+	border: 1px solid var(--ebmp-border);
+	border-radius: var(--ebmp-radius);
+	padding: 20px 24px;
+	margin-bottom: 36px;
+}
+
+.ebmp-meta-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+.ebmp-meta-icon {
+	font-size: 1.3rem;
+	line-height: 1;
+	margin-top: 2px;
+}
+
+.ebmp-meta-content {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.ebmp-meta-label {
+	font-size: 0.72rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--ebmp-text-light);
+}
+
+.ebmp-meta-value {
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: var(--ebmp-text);
+}
+
+/* Event Content Section */
+.ebmp-event-content {
+	border-top: 2px solid var(--ebmp-border);
+	padding-top: 32px;
+	margin-bottom: 40px;
+}
+
+.ebmp-section-title {
+	font-size: 1.3rem;
+	font-weight: 700;
+	margin-bottom: 16px;
+	color: var(--ebmp-text);
+}
+
+.ebmp-content-body {
+	font-size: 1rem;
+	line-height: 1.8;
+	color: #374151;
+}
+
+/* Back Link */
+.ebmp-back-link {
+	margin-top: 40px;
+	padding-top: 24px;
+	border-top: 1px solid var(--ebmp-border);
+}
+
+.ebmp-back-link a {
+	color: var(--ebmp-primary);
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.9rem;
+	transition: color 0.2s;
+}
+
+.ebmp-back-link a:hover {
+	color: var(--ebmp-primary-dark);
+	text-decoration: underline;
+}
+
+/* ════════════════════════════════════════════════════════════
+   ARCHIVE / LISTING PAGE
+════════════════════════════════════════════════════════════ */
+
+.ebmp-archive-header {
+	text-align: center;
+	margin-bottom: 48px;
+}
+
+.ebmp-archive-title {
+	font-size: 2.2rem;
+	font-weight: 800;
+	margin-bottom: 10px;
+	color: var(--ebmp-text);
+}
+
+.ebmp-archive-subtitle {
+	color: var(--ebmp-text-light);
+	font-size: 1.05rem;
+	margin: 0;
+}
+
+/* Events Grid */
+.ebmp-events-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 28px;
+	margin-bottom: 48px;
+}
+
+/* Event Card */
+.ebmp-event-card {
+	background: #fff;
+	border: 1px solid var(--ebmp-border);
+	border-radius: var(--ebmp-radius);
+	overflow: hidden;
+	box-shadow: var(--ebmp-shadow);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	display: flex;
+	flex-direction: column;
+}
+
+.ebmp-event-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Card Image */
+.ebmp-card-image-link {
+	display: block;
+	text-decoration: none;
+}
+
+.ebmp-card-image {
+	position: relative;
+	overflow: hidden;
+	height: 200px;
+	background: #f3f4f6;
+}
+
+.ebmp-card-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.3s ease;
+}
+
+.ebmp-event-card:hover .ebmp-card-image img {
+	transform: scale(1.04);
+}
+
+/* Badge on card image */
+.ebmp-card-badge {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	padding: 4px 12px;
+	border-radius: 999px;
+	font-size: 0.72rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* Card Body */
+.ebmp-card-body {
+	padding: 20px 22px 24px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.ebmp-card-title {
+	font-size: 1.1rem;
+	font-weight: 700;
+	margin: 0 0 12px;
+	line-height: 1.35;
+}
+
+.ebmp-card-title a {
+	color: var(--ebmp-text);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.ebmp-card-title a:hover {
+	color: var(--ebmp-primary);
+}
+
+/* Card Meta Rows */
+.ebmp-card-meta {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	margin-bottom: 14px;
+}
+
+.ebmp-card-meta-row {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 0.85rem;
+	color: var(--ebmp-text-light);
+}
+
+.ebmp-card-meta-icon {
+	font-size: 0.9rem;
+}
+
+.ebmp-card-meta-sep {
+	color: #d1d5db;
+}
+
+/* Excerpt */
+.ebmp-card-excerpt {
+	font-size: 0.88rem;
+	color: #6b7280;
+	line-height: 1.6;
+	margin: 0 0 16px;
+	flex: 1;
+}
+
+/* CTA Button */
+.ebmp-card-btn {
+	display: inline-block;
+	padding: 9px 20px;
+	border-radius: 6px;
+	font-size: 0.875rem;
+	font-weight: 600;
+	text-decoration: none;
+	text-align: center;
+	transition: background 0.2s, transform 0.1s;
+	margin-top: auto;
+	background: var(--ebmp-primary);
+	color: #fff;
+}
+
+.ebmp-card-btn:hover {
+	background: var(--ebmp-primary-dark);
+	color: #fff;
+	transform: translateY(-1px);
+}
+
+.ebmp-status-btn-cancelled {
+	background: #9ca3af;
+}
+
+.ebmp-status-btn-cancelled:hover {
+	background: #6b7280;
+}
+
+.ebmp-status-btn-closed {
+	background: #6b7280;
+}
+
+/* No Events */
+.ebmp-no-events {
+	text-align: center;
+	padding: 60px 20px;
+	color: var(--ebmp-text-light);
+	font-size: 1.05rem;
+}
+
+/* Pagination */
+.ebmp-pagination {
+	text-align: center;
+	margin-top: 24px;
+}
+
+.ebmp-pagination .nav-links {
+	display: inline-flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.ebmp-pagination a,
+.ebmp-pagination span {
+	display: inline-block;
+	padding: 7px 14px;
+	border-radius: 6px;
+	font-size: 0.875rem;
+	font-weight: 600;
+	text-decoration: none;
+	border: 1px solid var(--ebmp-border);
+	color: var(--ebmp-primary);
+	transition: background 0.2s;
+}
+
+.ebmp-pagination a:hover {
+	background: var(--ebmp-primary);
+	color: #fff;
+	border-color: var(--ebmp-primary);
+}
+
+.ebmp-pagination .current {
+	background: var(--ebmp-primary);
+	color: #fff;
+	border-color: var(--ebmp-primary);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media ( max-width: 640px ) {
+	.ebmp-event-title {
+		font-size: 1.5rem;
+	}
+
+	.ebmp-archive-title {
+		font-size: 1.6rem;
+	}
+
+	.ebmp-events-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.ebmp-event-meta-bar {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.ebmp-header-top {
+		flex-direction: column;
+		gap: 10px;
+	}
+}
+
+@media ( max-width: 420px ) {
+	.ebmp-event-meta-bar {
+		grid-template-columns: 1fr;
+	}
+}
